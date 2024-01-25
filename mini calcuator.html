@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    
+        <input type="number" placeholder="enter 1st number" id="num1">
+        <input type="number" placeholder="enter 2nd number" id="num2"><br>
+        <button id="add">Add</button>
+        <button id="subtract">Subtract</button>
+        <button id="Multiply">Multiply</button>
+        <button id="Divide">Divide</button>
+
+</body>
+</html>
+
+<script>
+
+    let buttons = document.querySelectorAll("button")
+    console.log(buttons)
+
+    let num1 = document.querySelector("#num1")
+    let num2 = document.querySelector("#num2")
+
+    for(let i of buttons){
+        i.addEventListener("click", function(){
+            Operation(i.id, num1.value, num2.value)
+        })
+    }
+
+
+    function Operation(id, num1, num2){
+
+        number1 = Number(num1)
+        number2 = Number(num2)
+        
+        console.log(id)
+        switch(id){
+            case "add": 
+                alert(number1 + number2)
+                break;
+            case "subtract":
+                alert(number1 - number2) 
+                break;
+            case "Multiply":
+                alert(number1 * number2)
+                break;
+            case "Divide":
+                alert(number1 / number2) 
+                break;
+        }
+    }
+    
+
+</script>
